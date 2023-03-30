@@ -11,6 +11,7 @@ import ConicInputs from "./ConicInputs";
 import SelectGradients from "./SelectGradients";
 import Description from "./Description";
 import NpmGithubLinks from "./NpmGithubLinks";
+import { LinearTextGradient } from "react-text-gradients-and-animations";
 
 const Home = () => {
   const timer = useRef(null);

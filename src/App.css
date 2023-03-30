@@ -1,4 +1,9 @@
 /* !Mobile first design! */
+a {
+  text-decoration: none !important;
+  color: black;
+}
+
 .home {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -810,6 +815,9 @@
 
 /* Desktops, large screens */
 @media (min-width: 1000px) {
+  .home {
+    padding-top: 2rem;
+  }
   .title-wrapper {
     font-size: 70px;
     width: 30rem;

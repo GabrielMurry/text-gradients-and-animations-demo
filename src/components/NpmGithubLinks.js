@@ -5,14 +5,20 @@ import { ImNpm } from "react-icons/im";
 const NpmGithubLinks = () => {
   return (
     <div className="links-wrapper">
-      <div className="links-npm">
+      <a
+        className="links-npm"
+        href="https://www.npmjs.com/package/react-text-gradients-and-animations"
+      >
         <span>NPM</span>
         <ImNpm className="npm-logo" />
-      </div>
-      <div className="links-github">
+      </a>
+      <a
+        className="links-github"
+        href="https://github.com/GabrielMurry/react-text-gradients-and-animations"
+      >
         <span>Github</span>
         <FaGithub className="github-logo" />
-      </div>
+      </a>
     </div>
   );
 };

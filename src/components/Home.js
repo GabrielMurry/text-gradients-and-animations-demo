@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import LinearCodeTitle from "./LinearCodeTitle";
 import LinearCodeBlock from "./LinearCodeBlock";
 import LinearInputs from "./LinearInputs";
@@ -11,10 +11,8 @@ import ConicInputs from "./ConicInputs";
 import SelectGradients from "./SelectGradients";
 import Description from "./Description";
 import NpmGithubLinks from "./NpmGithubLinks";
-import { LinearTextGradient } from "react-text-gradients-and-animations";
 
 const Home = () => {
-  const timer = useRef(null);
   const [angle, setAngle] = useState(
     JSON.parse(localStorage.getItem("storedAngle")) || 0
   );
@@ -89,7 +87,7 @@ const Home = () => {
     { value: "bottom", label: "Bottom" },
   ];
 
-  const incrementAngle = () => {
+  const handleAngleChange = (val) => {
     setHighlight((prev) => ({
       ...prev,
       angle: true,
@@ -101,25 +99,10 @@ const Home = () => {
       animateDirection: false,
       animateDuration: false,
     }));
-    timer.current = setInterval(() => setAngle((prev) => prev + 1), 100);
+    setAngle(val);
   };
 
-  const decrementAngle = () => {
-    setHighlight((prev) => ({
-      ...prev,
-      angle: true,
-      shape: false,
-      position: false,
-      color1: false,
-      color2: false,
-      animate: false,
-      animateDirection: false,
-      animateDuration: false,
-    }));
-    timer.current = setInterval(() => setAngle((prev) => prev - 1), 100);
-  };
-
-  const incrementDuration = () => {
+  const handleAnimateDurationChange = (val) => {
     setHighlight((prev) => ({
       ...prev,
       angle: false,
@@ -131,33 +114,8 @@ const Home = () => {
       animateDirection: false,
       animateDuration: true,
     }));
-    timer.current = setInterval(
-      () => setAnimateDuration((prev) => prev + 1),
-      100
-    );
+    setAnimateDuration(val);
   };
-
-  const decrementDuration = () => {
-    setHighlight((prev) => ({
-      ...prev,
-      angle: false,
-      shape: false,
-      position: false,
-      color1: false,
-      color2: false,
-      animate: false,
-      animateDirection: false,
-      animateDuration: true,
-    }));
-    timer.current = setInterval(
-      () => setAnimateDuration((prev) => prev - 1),
-      100
-    );
-  };
-
-  function timeoutClear() {
-    clearInterval(timer.current);
-  }
 
   const handleSwatchClick = (str) => {
     setSelectedColor(str);
@@ -306,10 +264,8 @@ const Home = () => {
               animateDuration={animateDuration}
             />
             <LinearInputs
-              setAngle={setAngle}
-              incrementAngle={incrementAngle}
-              decrementAngle={decrementAngle}
-              timeoutClear={timeoutClear}
+              angle={angle}
+              handleAngleChange={handleAngleChange}
               handleSwatchClick={handleSwatchClick}
               color1={color1}
               color2={color2}
@@ -322,9 +278,8 @@ const Home = () => {
               animateDirection={animateDirection}
               handleDirectionChange={handleDirectionChange}
               directionOptions={directionOptions}
-              setAnimateDuration={setAnimateDuration}
-              incrementDuration={incrementDuration}
-              decrementDuration={decrementDuration}
+              animateDuration={animateDuration}
+              handleAnimateDurationChange={handleAnimateDurationChange}
               refresh={refresh}
             />
             <SelectGradients gradient={gradient} setGradient={setGradient} />
@@ -359,7 +314,7 @@ const Home = () => {
             <RadialInputs
               shape={shape}
               position={position}
-              timeoutClear={timeoutClear}
+              handlePositionChange={handlePositionChange}
               handleSwatchClick={handleSwatchClick}
               color1={color1}
               color2={color2}
@@ -371,14 +326,12 @@ const Home = () => {
               animate={animate}
               animateDirection={animateDirection}
               handleShapeChange={handleShapeChange}
-              handlePositionChange={handlePositionChange}
               handleDirectionChange={handleDirectionChange}
               shapeOptions={shapeOptions}
               positionOptions={positionOptions}
               directionOptions={directionOptions}
-              setAnimateDuration={setAnimateDuration}
-              incrementDuration={incrementDuration}
-              decrementDuration={decrementDuration}
+              animateDuration={animateDuration}
+              handleAnimateDurationChange={handleAnimateDurationChange}
               refresh={refresh}
             />
             <SelectGradients gradient={gradient} setGradient={setGradient} />
@@ -411,11 +364,10 @@ const Home = () => {
               animateDuration={animateDuration}
             />
             <ConicInputs
-              setAngle={setAngle}
-              incrementAngle={incrementAngle}
-              decrementAngle={decrementAngle}
+              angle={angle}
+              handleAngleChange={handleAngleChange}
               position={position}
-              timeoutClear={timeoutClear}
+              handlePositionChange={handlePositionChange}
               handleSwatchClick={handleSwatchClick}
               color1={color1}
               color2={color2}
@@ -426,13 +378,11 @@ const Home = () => {
               handleAnimateClick={handleAnimateClick}
               animate={animate}
               animateDirection={animateDirection}
-              handlePositionChange={handlePositionChange}
               handleDirectionChange={handleDirectionChange}
               positionOptions={positionOptions}
               directionOptions={directionOptions}
-              setAnimateDuration={setAnimateDuration}
-              incrementDuration={incrementDuration}
-              decrementDuration={decrementDuration}
+              animateDuration={animateDuration}
+              handleAnimateDurationChange={handleAnimateDurationChange}
               refresh={refresh}
             />
             <SelectGradients gradient={gradient} setGradient={setGradient} />

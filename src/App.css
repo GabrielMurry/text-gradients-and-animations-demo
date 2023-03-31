@@ -153,6 +153,10 @@ a {
   width: 40%;
 }
 
+.slider {
+  width: 90%;
+}
+
 .increment {
   cursor: pointer;
   width: 3.5rem;
@@ -401,82 +405,85 @@ a {
 @media (min-width: 480px) {
   .home {
     padding-top: 1rem;
+    height: 100vh;
   }
-  .title-wrapper {
-    font-size: 60px;
-    height: 18rem;
-  }
-  .code-block-wrapper {
-    color: white;
-    padding: 3px;
-    font-size: 13px;
-  }
-  .code-block-inner-wrapper {
-    height: 10rem;
-    padding: 3px;
-  }
-  .input-wrapper {
-    height: 20rem;
-  }
-  .apply-changes-wrapper {
-    visibility: visible;
-    position: relative;
-    margin-right: 2rem;
-  }
-  .apply-changes-button {
-    width: 7.5rem;
-    height: 2.25rem;
-  }
-  .select-gradient-wrapper {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-  .select-gradient-linear {
-    width: 7rem;
-    height: 2.5rem;
-  }
-  .select-gradient-radial {
-    width: 7rem;
-    height: 2.5rem;
-  }
-  .select-gradient-conic {
-    width: 7rem;
-    height: 2.5rem;
-  }
-}
-
-/* Small screens, laptops */
-@media (min-width: 600px) {
-  .home {
+  .title-desc-and-links-wrapper {
     display: flex;
     justify-content: center;
   }
   .title-wrapper {
-    font-size: 45px;
+    font-size: 65px;
+    height: 20rem;
+    width: 30rem;
   }
   .linear-gradient-wrapper {
-    height: 100vh;
-    width: 50%;
-    padding-right: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
   }
   .radial-gradient-wrapper {
-    height: 100vh;
-    padding-right: 1rem;
-    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
   }
   .conic-gradient-wrapper {
-    height: 100vh;
-    width: 50%;
-    padding-right: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+  }
+  .code-block-wrapper {
+    color: white;
+    padding: 3px;
+    font-size: 15px;
+    width: 90%;
+  }
+  .code-block-inner-wrapper {
+    height: 12rem;
+    padding: 3px;
+  }
+  .input-wrapper {
+    height: 20rem;
+    width: 25rem;
+  }
+  .slider {
+    width: 80%;
+  }
+  .apply-changes-wrapper {
+    visibility: visible;
+    position: relative;
+    margin-right: 1rem;
+  }
+  .apply-changes-button {
+    width: 7.5rem;
+    height: 2.25rem;
+    font-weight: bold;
+  }
+  .select-gradient-wrapper {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 25rem;
+  }
+  .select-gradient-linear {
+    width: 7rem;
+    height: 2.5rem;
+    font-weight: bold;
+  }
+  .select-gradient-radial {
+    width: 7rem;
+    height: 2.5rem;
+    font-weight: bold;
+  }
+  .select-gradient-conic {
+    width: 7rem;
+    height: 2.5rem;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 750px) {
+  .home {
+    display: flex;
+    justify-content: center;
   }
   .title-desc-and-links-wrapper {
     padding-left: 1rem;
@@ -491,6 +498,8 @@ a {
     display: flex;
     justify-content: center;
     height: 45%;
+    font-size: 50px;
+    width: 22rem;
   }
   .title-text {
     text-align: start;
@@ -508,7 +517,7 @@ a {
   }
   .desc-wrapper {
     font-size: 20px;
-    width: 100%;
+    width: 22rem;
     height: 35%;
     display: flex;
     flex-direction: column;
@@ -526,7 +535,7 @@ a {
     height: 20%;
     display: flex;
     align-items: flex-start;
-    padding-top: 1rem;
+    padding-top: 2rem;
     justify-content: space-evenly;
     visibility: visible;
     position: relative;
@@ -534,9 +543,9 @@ a {
   .links-npm {
     cursor: pointer;
     background-color: rgb(240, 128, 128);
-    width: 9rem;
-    font-weight: bold;
+    width: 10rem;
     height: 3rem;
+    font-size: 18px;
     font-weight: bold;
     border-radius: 5px;
     display: flex;
@@ -552,8 +561,9 @@ a {
   .links-github {
     cursor: pointer;
     background-color: rgb(135, 206, 250);
-    width: 9rem;
+    width: 10rem;
     height: 3rem;
+    font-size: 18px;
     font-weight: bold;
     border-radius: 5px;
     display: flex;
@@ -567,124 +577,40 @@ a {
   .links-github:hover {
     background-color: rgb(135, 206, 250, 0.9);
   }
+  .linear-gradient-wrapper {
+    height: 100vh;
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .radial-gradient-wrapper {
+    height: 100vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .conic-gradient-wrapper {
+    height: 100vh;
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
   .code-block-wrapper {
     color: white;
     padding: 4px;
     background-color: gray;
     border-radius: 5px;
-    font-size: 12px;
-    margin-bottom: 2rem;
-  }
-  .code-block-inner-wrapper {
-    height: 11rem;
-    background-color: black;
-    border-radius: 5px;
-    padding: 2px;
-    display: flex;
-    justify-content: space-between;
-  }
-  .preview-gradient {
-    width: 3rem;
-    height: 3rem;
-  }
-  .preview-gradient-title {
-    font-size: 10px;
-  }
-  .input-wrapper {
-    height: 35%;
-    width: 100%;
-    margin-bottom: -2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  .apply-changes-wrapper {
-    visibility: visible;
-    position: relative;
-    margin-right: 0rem;
-  }
-  .apply-changes-button {
-    font-weight: bold;
-  }
-  .select-gradient-wrapper {
-    height: 18%;
-    width: 100%;
-    padding-top: 4rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-evenly;
-  }
-  .select-gradient-linear {
-    width: 5rem;
-    height: 2.5rem;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-  }
-  .select-gradient-radial {
-    width: 5rem;
-    height: 2.5rem;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-  }
-  .select-gradient-conic {
-    width: 5rem;
-    height: 2.5rem;
-    display: flex;
-    font-weight: bold;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-  }
-  .links-npm {
-    width: 8rem;
-    height: 2.5rem;
-  }
-  .links-github {
-    width: 8rem;
-    height: 2.5rem;
-  }
-}
-
-@media (min-width: 650px) {
-  .title-wrapper {
-    font-size: 40px;
-  }
-  .code-block-wrapper {
-    font-size: 13px;
-  }
-  .code-block-inner-wrapper {
-    height: 12rem;
-  }
-}
-
-@media (min-width: 750px) {
-  .title-wrapper {
-    font-size: 50px;
-    width: 22rem;
-  }
-  .desc-wrapper {
-    width: 22rem;
-  }
-  .linear-gradient-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .radial-gradient-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .conic-gradient-wrapper {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  .code-block-wrapper {
     font-size: 14px;
+    margin-bottom: 2rem;
   }
   .code-block-inner-wrapper {
     height: 12rem;
@@ -700,6 +626,14 @@ a {
   }
   .preview-gradient-title {
     font-size: 11px;
+  }
+  .input-wrapper {
+    height: 35%;
+    width: 100%;
+    margin-bottom: -1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .angle-title-input {
     width: 15rem;
@@ -772,44 +706,57 @@ a {
     font-size: 20px;
   }
   .apply-changes-wrapper {
+    visibility: visible;
+    position: relative;
+    margin-right: 0rem;
     padding-top: 4px;
     padding-bottom: 4px;
+  }
+  .apply-changes-mini-wrapper {
+    width: 15rem;
   }
   .apply-changes-title {
     width: 15rem;
     height: 1rem;
   }
-  .apply-changes-mini-wrapper {
-    width: 15rem;
-  }
   .apply-changes-button {
     width: 10rem;
     height: 2.25rem;
+  }
+  .select-gradient-wrapper {
+    height: 18%;
+    width: 100%;
+    padding-top: 4rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
   }
   .select-gradient-linear {
     width: 6rem;
     height: 3rem;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
   }
   .select-gradient-radial {
     width: 6rem;
     height: 3rem;
     font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
   }
   .select-gradient-conic {
     width: 6rem;
     height: 3rem;
     font-size: 18px;
-  }
-  .links-npm {
-    width: 10rem;
-    height: 3rem;
-    font-size: 18px;
-  }
-  .links-github {
-    width: 10rem;
-    height: 3rem;
-    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
   }
 }
 
@@ -847,6 +794,9 @@ a {
   }
   .desc-3 {
     margin-top: 3rem;
+  }
+  .input-wrapper {
+    margin-bottom: -2rem;
   }
   .angle-title-input {
     width: 15rem;

@@ -1,11 +1,12 @@
 import React from "react";
 import { SketchPicker } from "react-color";
 import Select from "react-select";
+import Slider from "rc-slider";
 
 const RadialInputs = ({
   shape,
   position,
-  timeoutClear,
+  handlePositionChange,
   handleSwatchClick,
   color1,
   color2,
@@ -17,14 +18,12 @@ const RadialInputs = ({
   animate,
   animateDirection,
   handleShapeChange,
-  handlePositionChange,
   handleDirectionChange,
   shapeOptions,
   positionOptions,
   directionOptions,
-  setAnimateDuration,
-  incrementDuration,
-  decrementDuration,
+  animateDuration,
+  handleAnimateDurationChange,
   refresh,
 }) => {
   return (
@@ -153,23 +152,13 @@ const RadialInputs = ({
             <span>Animate Duration</span>
           </div>
           <div className="inc-and-dec">
-            <div
-              onClick={() => setAnimateDuration((prev) => prev + 1)}
-              onPointerDown={incrementDuration}
-              onPointerUp={timeoutClear}
-              onPointerLeave={timeoutClear}
-              className="increment"
-            >
-              +
-            </div>
-            <div
-              onClick={() => setAnimateDuration((prev) => prev - 1)}
-              onPointerDown={decrementDuration}
-              onPointerUp={timeoutClear}
-              onPointerLeave={timeoutClear}
-              className="decrement"
-            >
-              -
+            <div className="slider">
+              <Slider
+                min={1}
+                max={30}
+                defaultValue={animateDuration}
+                onChange={(val) => handleAnimateDurationChange(val)}
+              />
             </div>
           </div>
         </div>

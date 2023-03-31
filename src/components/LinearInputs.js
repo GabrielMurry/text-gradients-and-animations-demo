@@ -1,12 +1,12 @@
 import React from "react";
 import { SketchPicker } from "react-color";
 import Select from "react-select";
+import Slider from "rc-slider";
+import "rc-slider/assets/index.css";
 
 const LinearInputs = ({
-  setAngle,
-  incrementAngle,
-  decrementAngle,
-  timeoutClear,
+  angle,
+  handleAngleChange,
   handleSwatchClick,
   color1,
   color2,
@@ -19,9 +19,8 @@ const LinearInputs = ({
   animateDirection,
   handleDirectionChange,
   directionOptions,
-  setAnimateDuration,
-  incrementDuration,
-  decrementDuration,
+  animateDuration,
+  handleAnimateDurationChange,
   refresh,
 }) => {
   return (
@@ -31,23 +30,13 @@ const LinearInputs = ({
           <span>Angle</span>
         </div>
         <div className="inc-and-dec">
-          <div
-            onClick={() => setAngle((prev) => prev + 1)}
-            onPointerDown={incrementAngle}
-            onPointerUp={timeoutClear}
-            onPointerLeave={timeoutClear}
-            className="increment"
-          >
-            +
-          </div>
-          <div
-            onClick={() => setAngle((prev) => prev - 1)}
-            onPointerDown={decrementAngle}
-            onPointerUp={timeoutClear}
-            onPointerLeave={timeoutClear}
-            className="decrement"
-          >
-            -
+          <div className="slider">
+            <Slider
+              min={0}
+              max={360}
+              defaultValue={angle}
+              onChange={(val) => handleAngleChange(val)}
+            />
           </div>
         </div>
       </div>
@@ -147,23 +136,13 @@ const LinearInputs = ({
             <span>Animate Duration</span>
           </div>
           <div className="inc-and-dec">
-            <div
-              onClick={() => setAnimateDuration((prev) => prev + 1)}
-              onPointerDown={incrementDuration}
-              onPointerUp={timeoutClear}
-              onPointerLeave={timeoutClear}
-              className="increment"
-            >
-              +
-            </div>
-            <div
-              onClick={() => setAnimateDuration((prev) => prev - 1)}
-              onPointerDown={decrementDuration}
-              onPointerUp={timeoutClear}
-              onPointerLeave={timeoutClear}
-              className="decrement"
-            >
-              -
+            <div className="slider">
+              <Slider
+                min={1}
+                max={30}
+                defaultValue={animateDuration}
+                onChange={(val) => handleAnimateDurationChange(val)}
+              />
             </div>
           </div>
         </div>

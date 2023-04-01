@@ -412,8 +412,8 @@ a {
     justify-content: center;
   }
   .title-wrapper {
-    font-size: 65px;
-    height: 20rem;
+    font-size: 55px;
+    height: 17rem;
     width: 30rem;
   }
   .linear-gradient-wrapper {
@@ -434,11 +434,11 @@ a {
   .code-block-wrapper {
     color: white;
     padding: 3px;
-    font-size: 15px;
+    font-size: 14px;
     width: 90%;
   }
   .code-block-inner-wrapper {
-    height: 12rem;
+    height: 11rem;
     padding: 3px;
   }
   .input-wrapper {
